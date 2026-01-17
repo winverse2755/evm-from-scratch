@@ -1,5 +1,6 @@
-#[derive(Debug)]
+const MAX_STACK_SIZE: u32 = 1024;
 
+#[derive(Debug)]
 struct Stack {
     data: Vec<u32>,
 }
@@ -10,6 +11,10 @@ impl Stack {
     }
 
     fn push(&mut self, item: u32) {
-        self.data.push(item);
+        if item < MAX_STACK_SIZE {
+            self.data.push(item);
+        } else {
+            panic!("Stack overflow: cannot push more items")
+        }
     }
 }
