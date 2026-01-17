@@ -1,3 +1,5 @@
+#[derive(Debug)]
+
 struct Stack {
     data: Vec<u32>,
 }
@@ -5,5 +7,9 @@ struct Stack {
 impl Stack {
     fn new() -> Self {
         Stack { data: Vec::new() }
+    }
+
+    fn push(&mut self, item: u32) {
+        self.data.push(item);
     }
 }
