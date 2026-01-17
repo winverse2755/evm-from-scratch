@@ -18,11 +18,11 @@ impl Stack {
         }
     }
 
-    fn pop(&mut self) -> u32 {
-        if item.len() == 0 {
-            panic!("Stack underflow: cannot items to pop")
+    fn pop(&mut self) -> Option<u32> {
+        if self.data.len() == 0 {
+            panic!("Stack underflow: cannot pop from empty stack")
         } else {
-            self.data.pop();
+            self.data.pop()
         }
     }
 }
