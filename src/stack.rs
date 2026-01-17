@@ -17,4 +17,6 @@ impl Stack {
             panic!("Stack overflow: cannot push more items")
         }
     }
+
+    fn pop(&mut self) -> u32 {}
 }
