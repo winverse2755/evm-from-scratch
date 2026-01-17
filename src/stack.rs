@@ -6,11 +6,11 @@ pub struct Stack {
 }
 
 impl Stack {
-    fn new() -> Self {
+    pub fn new() -> Self {
         Stack { data: Vec::new() }
     }
 
-    fn push(&mut self, item: u32) {
+    pub fn push(&mut self, item: u32) {
         if item < MAX_STACK_SIZE {
             self.data.push(item);
         } else {
@@ -18,7 +18,7 @@ impl Stack {
         }
     }
 
-    fn pop(&mut self) -> Option<u32> {
+    pub fn pop(&mut self) -> Option<u32> {
         if self.data.len() == 0 {
             panic!("Stack underflow: cannot pop from empty stack")
         } else {
