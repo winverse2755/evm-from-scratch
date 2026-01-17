@@ -1,6 +1,6 @@
 const MAX_STACK_SIZE: u32 = 1024;
 
-#[derive(Debug)]
+#[derive(Debug, PartialEq)]
 struct Stack {
     data: Vec<u32>,
 }
@@ -18,5 +18,11 @@ impl Stack {
         }
     }
 
-    fn pop(&mut self) -> u32 {}
+    fn pop(&mut self) -> u32 {
+        if item.len() == 0 {
+            panic!("Stack underflow: cannot items to pop")
+        } else {
+            self.data.pop();
+        }
+    }
 }
