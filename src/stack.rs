@@ -1,5 +1,5 @@
 struct Stack {
-    data: Vec<i32>,
+    data: Vec<u32>,
 }
 
 impl Stack {
