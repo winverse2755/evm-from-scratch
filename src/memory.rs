@@ -1,1 +1,3 @@
-struct Memory {}
+struct Memory {
+    data: Vec<u32>,
+}
