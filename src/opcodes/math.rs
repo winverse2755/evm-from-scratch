@@ -1,5 +1,8 @@
 use mini_evm::stack::Stack;
 
-fn add(a: u64, b: u64) -> u64 {
-    a + b
+fn add(stack: &mut Stack) {
+    let a = stack.pop().unwrap();
+    let b = stack.pop().unwrap();
+    let result = a + b;
+    stack.push(result);
 }
