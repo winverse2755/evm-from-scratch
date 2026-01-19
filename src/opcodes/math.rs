@@ -5,4 +5,6 @@ fn add(stack: &mut Stack) {
     let b = stack.pop().unwrap();
     let result = a + b;
     stack.push(result);
+
+    //include program counter and gas cost handling later
 }
