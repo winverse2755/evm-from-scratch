@@ -1,4 +1,6 @@
-use mini_evm::Stack;
+use mini_evm::memory;
+use mini_evm::stack::Stack;
+pub mod opcodes;
 
 fn main() {
     let mut stack = Stack::new();
