@@ -1,9 +1,13 @@
+use crate::stack::Stack;
+
+#[derive(Debug, PartialEq)]
+
 pub struct EVM {
-    stack: Stack,
-    pc: usize, // program counter
-    gas: u64,
-    value: u64,
-    calldata: Vec<u8>,
+    pub stack: Stack,
+    pub pc: usize, // program counter
+    pub gas: u64,
+    pub value: u64,
+    pub calldata: Vec<u8>,
 }
 
 impl EVM {

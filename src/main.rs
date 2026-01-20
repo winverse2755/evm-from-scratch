@@ -1,9 +1,8 @@
+use mini_evm::evm::EVM;
 use mini_evm::opcodes::math;
 use mini_evm::stack::Stack;
 
 fn main() {
-    let mut stack = Stack::new();
-
     //push items to stack and print
     // stack.push(3);
     // stack.push(7);
@@ -16,10 +15,18 @@ fn main() {
     // //print stack
     // println!("{:?}", stack);
 
-    stack.push(10);
-    stack.push(20);
-    println!("{:?}", stack);
+    let mut evm = EVM {
+        stack: Stack::new(),
+        pc: 0,
+        gas: 100,
+        value: 0,
+        calldata: vec![],
+    };
 
-    math::add(&mut stack);
-    println!("{:?}", stack);
+    evm.stack.push(10);
+    evm.stack.push(20);
+
+    math::add(&mut evm);
+
+    println!("{:?}", evm);
 }
