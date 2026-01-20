@@ -7,6 +7,16 @@ struct EVM {
     gas: u64,
 }
 
+impl EVM {
+    fn new() -> Self {
+        EVM {
+            stack: Stack::new(),
+            pc: 0,
+            gas: 1000000, // initial gas
+        }
+    }
+}
+
 fn main() {
     let mut stack = Stack::new();
 
