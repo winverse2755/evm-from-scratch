@@ -1,6 +1,7 @@
 const MAX_STACK_SIZE: u32 = 1024;
 
 #[derive(Debug, PartialEq)]
+
 pub struct Stack {
     data: Vec<u32>,
 }

@@ -1,6 +1,11 @@
-use mini_evm::memory;
 use mini_evm::opcodes::math;
 use mini_evm::stack::Stack;
+
+struct EVM {
+    stack: Stack,
+    pc: usize, // program counter
+    gas: u64,
+}
 
 fn main() {
     let mut stack = Stack::new();
