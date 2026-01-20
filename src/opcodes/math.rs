@@ -1,4 +1,4 @@
-use mini_evm::stack::Stack;
+use crate::stack::Stack;
 
 fn add(stack: &mut Stack) {
     let a = stack.pop().unwrap();
