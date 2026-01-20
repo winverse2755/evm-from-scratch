@@ -19,6 +19,8 @@ fn main() {
 
     stack.push(10);
     stack.push(20);
+    println!("{:?}", stack);
 
     math::add(&mut stack);
+    println!("{:?}", stack);
 }
