@@ -20,5 +20,5 @@ fn main() {
     stack.push(10);
     stack.push(20);
 
-    // math::add(&mut stack);
+    math::add(&mut stack);
 }

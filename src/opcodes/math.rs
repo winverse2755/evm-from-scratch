@@ -1,6 +1,6 @@
 use crate::stack::Stack;
 
-fn add(stack: &mut Stack) {
+pub fn add(stack: &mut Stack) {
     let a = stack.pop().unwrap();
     let b = stack.pop().unwrap();
     let result = a + b;
