@@ -1,7 +1,5 @@
 use crate::evm::EVM;
 
-#[derive(Debug)]
-
 pub fn add(evm: &mut EVM) {
     let a = evm.stack.pop().unwrap();
     let b = evm.stack.pop().unwrap();

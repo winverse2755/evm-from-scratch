@@ -15,3 +15,7 @@ impl simple_memory {
         &self.data[offset..end]
     }
 }
+
+struct Memory {
+    simple_memory: simple_memory,
+}
