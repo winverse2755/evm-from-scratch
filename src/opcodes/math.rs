@@ -7,5 +7,5 @@ pub fn add(evm: &mut EVM) {
 
     evm.gas_cost(3);
 
-    //include program counter and gas cost handling later
+    evm.step();
 }
