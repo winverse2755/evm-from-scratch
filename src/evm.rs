@@ -1,6 +1,6 @@
 use crate::stack::Stack;
 
-#[derive(Debug, PartialEq)]
+#[derive(Debug)]
 
 pub struct EVM {
     pub stack: Stack,
