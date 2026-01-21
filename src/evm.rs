@@ -11,7 +11,7 @@ pub struct EVM {
 }
 
 impl EVM {
-    fn gas_cost(&mut self, cost: u64) {
+    pub fn gas_cost(&mut self, cost: u64) {
         if self.gas >= cost {
             self.gas -= cost;
         } else {
@@ -19,7 +19,7 @@ impl EVM {
         }
     }
 
-    fn step(&mut self) {
+    pub fn step(&mut self) {
         // Placeholder for fetching the next opcode
         // let opcode = self.fetch_opcode();
         // match opcode {

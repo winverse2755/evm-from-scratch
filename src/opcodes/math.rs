@@ -5,5 +5,7 @@ pub fn add(evm: &mut EVM) {
     let b = evm.stack.pop().unwrap();
     evm.stack.push(a + b);
 
+    evm.gas_cost(3);
+
     //include program counter and gas cost handling later
 }
