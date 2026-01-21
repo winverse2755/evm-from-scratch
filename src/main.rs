@@ -16,5 +16,5 @@ fn main() {
 
     math::add(&mut evm);
 
-    println!("{:?}", evm);
+    println!("{:#?}", evm);
 }
