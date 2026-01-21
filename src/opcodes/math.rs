@@ -1,5 +1,7 @@
 use crate::evm::EVM;
 
+#[derive(Debug)]
+
 pub fn add(evm: &mut EVM) {
     let a = evm.stack.pop().unwrap();
     let b = evm.stack.pop().unwrap();
@@ -21,5 +23,17 @@ pub fn sub(evm: &mut EVM) {
     let b = evm.stack.pop().unwrap();
     evm.stack.push(a - b);
     evm.gas_cost(3);
+    evm.step();
+}
+
+pub fn div(evm: &mut EVM) {
+    let a = evm.stack.pop().unwrap();
+    let b = evm.stack.pop().unwrap();
+    if b == 0 {
+        evm.stack.push(0);
+    } else {
+        evm.stack.push(a / b);
+    }
+    evm.gas_cost(5);
     evm.step();
 }
