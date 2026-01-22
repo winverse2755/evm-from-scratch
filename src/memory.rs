@@ -21,6 +21,13 @@ impl simple_memory {
         }
         self.access(offset, 32)[0]
     }
+
+    fn store(&mut self, offset: usize, value: u32) {
+        if offset >= self.memory.len() {
+            self.memory.resize(offset + 1, 0);
+        }
+        self.memory[offset] = value;
+    }
 }
 
 struct Memory {
