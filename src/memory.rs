@@ -14,6 +14,13 @@ impl simple_memory {
         }
         &self.memory[offset..end]
     }
+
+    fn load(&mut self, offset: usize) -> u32 {
+        if offset >= self.memory.len() {
+            panic!("Memory load out of bounds");
+        }
+        self.access(offset, 32)[0]
+    }
 }
 
 struct Memory {
