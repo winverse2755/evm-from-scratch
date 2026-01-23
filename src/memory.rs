@@ -33,3 +33,23 @@ impl simple_memory {
 struct Memory {
     simple_memory: simple_memory,
 }
+
+impl Memory {
+    fn new() -> Self {
+        Memory {
+            simple_memory: simple_memory::new(),
+        }
+    }
+
+    fn access(&mut self, offset: usize, size: usize) -> &[u32] {
+        self.simple_memory.access(offset, size)
+    }
+
+    fn load(&mut self, offset: usize) -> u32 {
+        self.simple_memory.load(offset)
+    }
+
+    fn store(&mut self, offset: usize, value: u32) {
+        self.simple_memory.store(offset, value);
+    }
+}
