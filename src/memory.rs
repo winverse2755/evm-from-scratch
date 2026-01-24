@@ -41,15 +41,11 @@ impl Memory {
         }
     }
 
-    fn access(&mut self, offset: usize, size: usize) -> &[u32] {
-        self.simple_memory.access(offset, size)
-    }
-
-    fn load(&mut self, offset: usize) -> u32 {
-        self.simple_memory.load(offset)
-    }
-
     fn store(&mut self, offset: usize, value: u32) {
         self.simple_memory.store(offset, value);
+
+        if expansion_needed {
+            self.simple_memory.memory.resize(offset + 1, 0);
+        }
     }
 }
